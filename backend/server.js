@@ -19,7 +19,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-app.get('/api/shows', (rep, resp, next) => {
+app.get('/api/home', (rep, resp, next) => {
   db.any('select * from ')
 })
 
