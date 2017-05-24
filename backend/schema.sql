@@ -16,7 +16,10 @@ CREATE TABLE mailing_list (
 )
 
 CREATE TABLE gig_requests (
+  id serial PRIMARY KEY,
   artist_name text,
   artist_website text,
-  bio text
+  bio text,
+  email text,
+  phone text
 )
