@@ -30,3 +30,7 @@ ul.nav:after {
 .active {
   color: red;
 }
+
+#show_feed {
+  float: right;
+}

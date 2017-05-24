@@ -15,7 +15,9 @@ import { Router, Route, Link, IndexLink, IndexRoute, hashHistory } from 'react-r
 
 // import all components and their reducers here
 import homeReducer from './home/Home.reducer';
-import HomeContainer from '.home/Home';
+import HomeContainer from './home/Home';
+import EventPageContainer from './event_page/Event_Page';
+import eventPageReducer from './event_page/Event_Page.reducer';
 
 
 const reducer = Redux.combineReducers({
@@ -23,7 +25,8 @@ const reducer = Redux.combineReducers({
 // state => state.hello line - argument of
 // ReactRedux.connect in hello/Hello.js
 // Use this pattern for each component
-  home: homeReducer
+  home: homeReducer,
+  event_page: eventPageReducer
 });
 
 
@@ -40,7 +43,7 @@ class AppLayout extends React.Component {
         <ul className="nav">
           <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
           <li><Link to="/menu" activeClassName="active">Menu</Link></li>
-          <li><Link to="/caledar" activeClassName="active">Calendar</Link></li>
+          <li><Link to="/calendar" activeClassName="active">Calendar</Link></li>
           <li><Link to="/contact" activeClassName="active">Contact</Link></li>
         </ul>
         {this.props.children}
@@ -53,10 +56,10 @@ ReactDOM.render(
   <ReactRedux.Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={AppLayout}>
+      <Route path="/shows/:id" component={EventPageContainer}/>
         <IndexRoute component={HomeContainer}>
         </IndexRoute>
-        <Route path="/shows/:id" component={ShowsContainer}/>
-        
+
 
       </Route>
     </Router>

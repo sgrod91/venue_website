@@ -10,14 +10,16 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-      <h1>Welcome to Venue!</h1>
-      {this.props.shows.map(item =>
-        <ul key={item.id}>
-          <li>{item.artist_name}</li>
-          {this.props.shows && <img src={this.props.shows.artist_image} width="300"/>}
-        <li><Link to={"/shows/" + item.id}> {item.artist_name} Page</Link></li>
-        </ul>
-        )}
+        <h1>Welcome to Stevens Basement!</h1><br/>
+        <div id="show_feed">
+        <h3>Upcoming Shows:</h3>
+        {this.props.shows.map(item =>
+          <ul key={item.id}>
+            <li>{item.artist_name} - {item.date} - {item.set_times}</li>
+            <a href={"#/shows/" + item.id}><img src={item.artist_image} width="300"/></a>
+          </ul>
+          )}
+        </div>
       </div>
     );
   }
