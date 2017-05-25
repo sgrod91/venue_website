@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 export function getSinglePage(eventID) {
   let asyncAction = function(dispatch) {
-    $.get('http://localhost:4000/api/shows' + eventID)
+    $.get('http://localhost:4000/api/shows/' + eventID)
     .then(data => dispatch({
       type: 'load-single-event',
       data: data
