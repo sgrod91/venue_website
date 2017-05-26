@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 50px;
   font-family: sans-serif;
-  background-color: white;
+  background-color: gray;
 }
 
 ul.nav {
@@ -32,5 +32,51 @@ ul.nav:after {
 }
 
 #show_feed {
+  color: white;
+  background-color: black;
   float: right;
+  border: 1px solid white;
+  padding: 5px;
+  text-align: center;
+  width: 30%;
+
+}
+
+#show_feed img {
+  width: 300px;
+}
+
+#home_page {
+  padding: 20px;
+  float: left;
+  text-align: center;
+  border: 1px solid white;
+  width: 60%;
+  background-color: black;
+  color: white;
+}
+
+.row {
+  background-color: white;
+  width: auto;
+  height: auto;
+  /*border: 1px solid black;*/
+
+}
+
+.box {
+  width: 14.2857143%;
+  height: 20%;
+  /*border: 1px solid black;*/
+  float: left;
+}
+
+.row:before,
+.row:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.row:after {
+    clear: both;
 }

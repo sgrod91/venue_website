@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 
 app.get('/api/shows', (rep, resp, next) => {
-  db.any('select * from shows')
+  db.any('select * from shows order by date') 
   .then(data => resp.json(data))
   .catch(next);
 });
