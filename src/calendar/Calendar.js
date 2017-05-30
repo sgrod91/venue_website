@@ -17,13 +17,33 @@ class CalendarPage extends React.Component {
       <div>
         <div className="row">
           <div className="box">
-        weekday
+            Sun
+          </div>
+          <div className="box">
+            Mon
+          </div>
+          <div className="box">
+            Tue
+          </div>
+          <div className="box">
+            Wed
+          </div>
+          <div className="box">
+            Thu
+          </div>
+          <div className="box">
+            Fri
+          </div>
+          <div className="box">
+            Sat
           </div>
         </div>
         {grid.map(numbers =>
           <div className="row">
             {numbers.map(item => <div className="box"> {item} </div>)}
+
           </div> )}
+
 
       </div>
     );

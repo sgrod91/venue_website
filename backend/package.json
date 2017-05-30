@@ -9,7 +9,9 @@
     "body-parser": "^1.17.2",
     "cors": "^2.8.3",
     "express": "^4.15.3",
-    "pg-promise": "^5.7.1"
+    "pg-promise": "^5.7.1",
+    "react-addons-css-transition-group": "^15.5.2",
+    "react-infinite-calendar": "^2.3.1"
   },
   "devDependencies": {},
   "scripts": {
