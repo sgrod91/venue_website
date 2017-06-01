@@ -10,3 +10,15 @@ export function loadCalendarPage() {
   };
   return asyncAction;
 }
+
+export function previousMonth() {
+  return {
+    type: 'previous-month'
+  };
+};
+
+export function nextMonth() {
+  return {
+    type: 'next-month'
+  };
+};

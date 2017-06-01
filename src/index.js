@@ -3,6 +3,7 @@
 // Stylesheet
 import './index.css';
 
+
 // Standard React/Redux imports
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -43,12 +44,15 @@ class AppLayout extends React.Component {
   render() {
     return (
       <div>
-        <ul className="nav">
-          <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
-          <li><Link to="/menu" activeClassName="active">Menu</Link></li>
-          <li><Link to="/calendar" activeClassName="active">Calendar</Link></li>
-          <li><Link to="/contact" activeClassName="active">Contact</Link></li>
-        </ul>
+      <div id="header">
+        <h1>Steven's Basement</h1><br/>
+          <ul className="nav">
+            <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
+            <li><Link to="/menu" activeClassName="active">Menu</Link></li>
+            <li><Link to="/calendar" activeClassName="active">Calendar</Link></li>
+            <li><Link to="/contact" activeClassName="active">Contact</Link></li>
+          </ul>
+        </div>
         {this.props.children}
       </div>
     )

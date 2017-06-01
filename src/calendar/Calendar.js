@@ -8,13 +8,37 @@ class CalendarPage extends React.Component {
     this.props.loadCalendarPage();
   }
   render() {
-    let grid = [
-      [1,2,3,4,5,6,7],
-      [8,9,10,11,12,13,14],
+    let monthArr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    let weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    let arr = [];
+    let childArr = [];
+    let year = this.props.year;
+    let month = this.props.month;
+    let first = new Date(year, month, 1);
+    for (let i = 1 - first.getDay() ; i <= 40; i++) {
+      let date = new Date(year, month, i);
+        // console.log(date.getMonth());
+      // if(date.getMonth() === month) {
+        if (childArr.length < 7) {
+          childArr.push(((date.getMonth() + 1) + '/' + date.getDate()));
+        }else{
+          arr.push(childArr);
+          childArr = [];
+          childArr.push(((date.getMonth() + 1) + '/' + date.getDate()));
+        }
+      // }else{
+      //   // do nothing
+      // }
+    }
+    console.log(weekdays);
+    console.log(arr);
+    // console.log(childArr);
 
-      ]
     return (
-      <div>
+      <div id="calendar">
+        <h3><button onClick={() => this.props.previousMonth()}>Previous Month</button>
+        {monthArr[this.props.month]}
+        <button onClick={() => this.props.nextMonth()}>Next Month</button></h3>
         <div className="row">
           <div className="box">
             Sun
@@ -38,9 +62,9 @@ class CalendarPage extends React.Component {
             Sat
           </div>
         </div>
-        {grid.map(numbers =>
-          <div className="row">
-            {numbers.map(item => <div className="box"> {item} </div>)}
+        {arr.map((numbers, index) =>
+          <div key={index} className="row">
+            {numbers.map((item, index) => <div key={index} className="box"> {item} </div>)}
 
           </div> )}
 
@@ -51,7 +75,7 @@ class CalendarPage extends React.Component {
 }
 
 const CalendarContainer = ReactRedux.connect(
-  state => state.home,
+  state => state.calendar,
   actions
 )(CalendarPage);
 
