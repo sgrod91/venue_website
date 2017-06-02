@@ -77,25 +77,25 @@ class CalendarPage extends React.Component {
         </h3>
         <div className="row">
           <div className="box">
-            Sun
+            <b>Sun</b>
           </div>
           <div className="box">
-            Mon
+            <b>Mon</b>
           </div>
           <div className="box">
-            Tue
+            <b>Tue</b>
           </div>
           <div className="box">
-            Wed
+            <b>Wed</b>
           </div>
           <div className="box">
-            Thu
+            <b>Thu</b>
           </div>
           <div className="box">
-            Fri
+            <b>Fri</b>
           </div>
           <div className="box">
-            Sat
+            <b>Sat</b>
           </div>
         </div>
         {arr.map((numbers, index) =>
@@ -107,7 +107,9 @@ class CalendarPage extends React.Component {
               <div key={index} className="box">
 
                 {date.month + 1}/{date.date}
-                getEventsForDate().map(result => Link)
+                {getEventsForDate(this.props.events, date).map(result =>
+                  <Link key={result.id} to={"shows/" + result.id}>{result.artist_name}</Link>)
+                }
 
               </div>
 

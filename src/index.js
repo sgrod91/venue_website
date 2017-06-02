@@ -22,6 +22,8 @@ import eventPageReducer from './event_page/Event_Page.reducer';
 import calendarReducer from './calendar/Calendar.reducer';
 import CalendarContainer from './calendar/Calendar';
 import About from './about';
+import ContactContainer from './contact/Contact';
+import contactReducer from './contact/Contact.reducer';
 
 
 const reducer = Redux.combineReducers({
@@ -31,7 +33,8 @@ const reducer = Redux.combineReducers({
 // Use this pattern for each component
   home: homeReducer,
   event_page: eventPageReducer,
-  calendar: calendarReducer
+  calendar: calendarReducer,
+  contact: contactReducer
 });
 
 
@@ -67,6 +70,7 @@ ReactDOM.render(
       <Route path="/about" component={About}/>
       <Route path="/shows/:id" component={EventPageContainer}/>
       <Route path="/calendar" component={CalendarContainer}/>
+      <Route path="/contact" component={ContactContainer}/>
         <IndexRoute component={HomeContainer}>
         </IndexRoute>
 

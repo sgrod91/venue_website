@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 
 app.get('/api/shows', (rep, resp, next) => {
-  db.any('select * from shows order by date') 
+  db.any('select * from shows order by date')
   .then(data => resp.json(data))
   .catch(next);
 });
@@ -54,6 +54,21 @@ app.post('/api/bookevent', (req, resp, next) => {
       data.bio,
       data.email,
       data.phone
+    ]
+  )
+.then(data => resp.json(data))
+.catch(next);
+});
+
+app.post('/api/mailinglist', (req, resp, next) => {
+  let data = req.body;
+  db.one(`
+    insert into mailing_list
+    values (default, $1)
+    returning email
+    `,
+    [
+      data.email
     ]
   )
 .then(data => resp.json(data))

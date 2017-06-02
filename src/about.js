@@ -3,14 +3,14 @@ import React from 'react';
 class About extends React.Component {
   render() {
     return (
-      <div>
-      <h3>This Basement Rocks</h3>
-      <div id="about_page">
-      <img src="images/divebar.jpg" width="500"/>
-
-      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-      The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+      <div className="about_page">
+      <div id="about_left">
+        <h4>This Basement Rocks</h4>
+        <img src="images/divebar.jpg" width="400"/>
+      </div>
+      <div id="about_right">
+        <p>Steven's Basement is the best place for live music in Decatur, GA. It doesn't exist yet, but we swear you will love it. We have food, drinks, music, and all of the things that you enjoy.</p>
+        <p> Want to play a show here? Click <a href="#/contact">here</a> and fill out a short request form. If we have an appropriate date avialable, we will contact you and add you or your band to the event calendar!</p>
       </div>
       </div>
     )
