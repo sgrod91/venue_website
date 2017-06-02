@@ -21,6 +21,7 @@ import EventPageContainer from './event_page/Event_Page';
 import eventPageReducer from './event_page/Event_Page.reducer';
 import calendarReducer from './calendar/Calendar.reducer';
 import CalendarContainer from './calendar/Calendar';
+import About from './about';
 
 
 const reducer = Redux.combineReducers({
@@ -48,7 +49,7 @@ class AppLayout extends React.Component {
         <h1>Steven's Basement</h1><br/>
           <ul className="nav">
             <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
-            <li><Link to="/menu" activeClassName="active">Menu</Link></li>
+            <li><Link to="/about" activeClassName="active">About</Link></li>
             <li><Link to="/calendar" activeClassName="active">Calendar</Link></li>
             <li><Link to="/contact" activeClassName="active">Contact</Link></li>
           </ul>
@@ -63,6 +64,7 @@ ReactDOM.render(
   <ReactRedux.Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={AppLayout}>
+      <Route path="/about" component={About}/>
       <Route path="/shows/:id" component={EventPageContainer}/>
       <Route path="/calendar" component={CalendarContainer}/>
         <IndexRoute component={HomeContainer}>

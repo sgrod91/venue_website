@@ -1,14 +1,14 @@
 const INITIAL_STATE = {
   year: new Date() .getFullYear(),
-  month: new Date() .getMonth()
-
+  month: new Date() .getMonth(),
+  events: []
 };
 
 export default function reducer(state = INITIAL_STATE, action) {
   if (action.type === 'load-calendar') {
     console.log(action.data);
     return Object.assign({}, state, {
-      event: action.data
+      events: action.data
     });
   } else if (action.type === 'previous-month') {
       console.log(action.data);

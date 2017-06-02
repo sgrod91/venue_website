@@ -2,10 +2,39 @@ import React from 'react';
 import * as ReactRedux from 'react-redux';
 import * as actions from './Calendar.actions';
 import dateFormat from 'dateformat';
+import { Router, Route, Link, IndexLink, IndexRoute, hashHistory } from 'react-router';
+
+function date_checker(date, mydate) {
+  let d = new Date(date)
+  if(mydate.year === d.getFullYear()
+      && mydate.month === d.getMonth()
+      && mydate.date === d.getDate()
+    ) {
+    return true
+  } else {
+    return false
+  };
+}
+
+function getEventsForDate(events, mydate) {
+  let eventArray = [];
+  for (let i = 0; i < events.length; i++) {
+    if (date_checker(events[i].date, mydate)) {
+      eventArray.push(events[i]);
+    }
+  }
+    console.log(eventArray);
+    return eventArray
+}
 
 class CalendarPage extends React.Component {
   componentDidMount() {
     this.props.loadCalendarPage();
+
+  }
+  getEventsFor(mydate) {
+    date_checker()
+    this.props.events
   }
   render() {
     let monthArr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -19,12 +48,17 @@ class CalendarPage extends React.Component {
       let date = new Date(year, month, i);
         // console.log(date.getMonth());
       // if(date.getMonth() === month) {
+        let dateObj = {
+          year: year,
+          month: date.getMonth(),
+          date: date.getDate()
+        };
         if (childArr.length < 7) {
-          childArr.push(((date.getMonth() + 1) + '/' + date.getDate()));
+          childArr.push(dateObj);
         }else{
           arr.push(childArr);
           childArr = [];
-          childArr.push(((date.getMonth() + 1) + '/' + date.getDate()));
+          childArr.push(dateObj);
         }
       // }else{
       //   // do nothing
@@ -36,9 +70,11 @@ class CalendarPage extends React.Component {
 
     return (
       <div id="calendar">
-        <h3><button onClick={() => this.props.previousMonth()}>Previous Month</button>
-        {monthArr[this.props.month]}
-        <button onClick={() => this.props.nextMonth()}>Next Month</button></h3>
+        <h3>
+        <button onClick={() => this.props.previousMonth()}>Previous Month</button>
+        {monthArr[this.props.month]} {this.props.year}
+        <button onClick={() => this.props.nextMonth()}>Next Month</button>
+        </h3>
         <div className="row">
           <div className="box">
             Sun
@@ -63,8 +99,20 @@ class CalendarPage extends React.Component {
           </div>
         </div>
         {arr.map((numbers, index) =>
+
           <div key={index} className="row">
-            {numbers.map((item, index) => <div key={index} className="box"> {item} </div>)}
+            {numbers.map((date, index) =>
+
+
+              <div key={index} className="box">
+
+                {date.month + 1}/{date.date}
+                getEventsForDate().map(result => Link)
+
+              </div>
+
+
+            )}
 
           </div> )}
 
