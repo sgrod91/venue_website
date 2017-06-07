@@ -55,7 +55,8 @@ h4 {
   letter-spacing: 1px;
   font-weight: lighter;
   font-size: 30px;
-  color: white;
+  color: #B29A7D;
+  text-decoration: underline;
   text-align: center;
 }
 
@@ -110,26 +111,24 @@ ul.nav:after {
   padding-left: 2%;
   padding-right: 2%;
   background-color: #262626;
-  margin-left: 20%;
-  margin-right: 20%;
+  /*margin-left: 20%;
+  margin-right: 20%;*/
 }
 
 #show_details {
-  border: 1px solid black;
+  width: 100%;
+  height: 100%;
   font-family: 'Montserrat', sans-serif;
-
+  float: left;
 }
 
-#show_details img {
-  width: 200px;
-}
 
 .home_date {
+  border-bottom: 1px solid black;
   width: 100px;
   height: 100px;
   display: inline-block;
   background-color: white;
-  border-right: 1px solid black;
   vertical-align: top;
   padding-top: 30px;
   padding-left: 5px;
@@ -137,20 +136,24 @@ ul.nav:after {
 }
 
 .home_artist_image {
+  border: 1px solid black;
   height: 100px;
   display: inline-block;
   background-color: white;
-  border-right: 1px solid black;
   vertical-align: top;
 }
 
+.home_artist_image img {
+  width: 200px;
+}
+
 .home_artist {
+  border-right: 1px solid black;
   font-weight: bold;
   height: 100px;
-  width: 250px;
+  width: 200px;
   display: inline-block;
   background-color: white;
-  border-right: 1px solid black;
   vertical-align: top;
   padding-left: 10px;
   padding-top: 30px;
@@ -162,7 +165,6 @@ ul.nav:after {
   width: 100px;
   display: inline-block;
   background-color: white;
-  border-right: 1px solid black;
   vertical-align: top;
   padding-top: 30px;
   padding-left: 5px;
@@ -186,26 +188,41 @@ ul.nav:after {
   float: right;
 }
 
-.about_page {
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 10%;
+.left_home {
+  width: 30%;
+  height: 100%;
+  float: left;
+  margin-bottom: 20px;
 }
 
-#about_left {
-  text-align: center;
+.center_home {
   width: 40%;
   float: left;
+
 }
 
-#about_right {
-  padding-top: 120px;
-  width: 50%;
+.right_home {
+  text-align: center;
   float: right;
+  width: 30%;
+  height: 100%;
 }
 
-#about_page img {
-  float: left;
+#contact_card {
+  text-align: none;
+}
+
+#mailing_list_form {
+
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+#gig_request {
+
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .row {
@@ -256,55 +273,4 @@ ul.nav:after {
   font-size: 15px;
   padding: 21.5px;
   float: right;
-}
-
-.contact_page {
-  text-align: center;
-  border: 1px solid white;
-
-}
-
-#contact_card {
-  border: 1px solid white;
-  float: left;
-  height: 500px;
-}
-
-#location {
-  border: 1px solid white;
-  float: left;
-  height: 500px;
-}
-
-#location h4 {
-  margin: 43px 0;
-}
-
-#mailing_list {
-  float: left;
-  text-align: center;
-  display: inline;
-
-}
-
-div#mailing_list {
-  width: 30%;
-}
-
-#mailing_list_form {
-  border: 1px solid white;
-  /*width: 30%;*/
-}
-
-form #mailing_list_form {
-  /*width: 30%;*/
-}
-
-#gig_request {
-  float: left;
-  text-align: center;
-  width: 538.25px;
-  border: 1px solid white;
-  height: 353px;
-  /*width: 30%;*/
 }

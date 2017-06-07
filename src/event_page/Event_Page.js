@@ -18,8 +18,8 @@ class EventPage extends React.Component {
       return(
         <div className="event_page">
           <div id="event_page_left">
-            <h3>{this.props.event && this.props.event.artist_name}</h3>
-            <h4>{this.props.event && dateFormat(new Date(this.props.event.date), 'mediumDate')}, {this.props.event && this.props.event.times}</h4>
+            <h4>{this.props.event && this.props.event.artist_name}</h4>
+            <h6>{this.props.event && dateFormat(new Date(this.props.event.date), 'mediumDate')}, {this.props.event && this.props.event.times}</h6>
             {this.props.event && <img src={this.props.event.artist_image} width="400"/>}<br/><br/>
           </div>
           <div id="event_page_right">

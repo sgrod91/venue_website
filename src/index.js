@@ -51,10 +51,7 @@ class AppLayout extends React.Component {
       <div id="header">
         <h1>Steven's Basement</h1><br/>
           <ul className="nav">
-            <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
-            <li><Link to="/about" activeClassName="active">About</Link></li>
-            <li><Link to="/calendar" activeClassName="active">Calendar</Link></li>
-            <li><Link to="/contact" activeClassName="active">Contact</Link></li>
+
           </ul>
         </div>
         {this.props.children}
@@ -67,10 +64,8 @@ ReactDOM.render(
   <ReactRedux.Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={AppLayout}>
-      <Route path="/about" component={About}/>
       <Route path="/shows/:id" component={EventPageContainer}/>
       <Route path="/calendar" component={CalendarContainer}/>
-      <Route path="/contact" component={ContactContainer}/>
         <IndexRoute component={HomeContainer}>
         </IndexRoute>
 
