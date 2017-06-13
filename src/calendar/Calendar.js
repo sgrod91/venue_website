@@ -106,7 +106,7 @@ class CalendarPage extends React.Component {
 
               <div key={index} className="box">
 
-                {date.month + 1}/{date.date}
+                {date.date}
                 {getEventsForDate(this.props.events, date).map(result =>
                   <Link key={result.id} to={"shows/" + result.id}>{result.artist_name}</Link>)
                 }
