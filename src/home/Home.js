@@ -33,7 +33,7 @@ class Home extends React.Component {
               <div className="home_date">{dateFormat(new Date(item.date), 'mediumDate')}</div>
               <div className="home_artist_image"><a href={"#/shows/" + item.id}><img src={item.artist_image}/></a></div>
               <div className="home_artist">{item.artist_name}</div>
-              <div className="home_show_details">{item.times} show<br/><br/>
+              <div className="home_show_details">{item.set_times} show<br/><br/>
               ${item.ticket_price}</div>
             </div>
             )}
